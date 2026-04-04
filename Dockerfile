@@ -7,4 +7,6 @@ COPY . .
 
 ENV APP_ENV=prod
 
-CMD ["frankenphp", "run", "--config", "/etc/caddy/Caddyfile"]
+EXPOSE 8080
+
+CMD ["frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
