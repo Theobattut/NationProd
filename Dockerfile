@@ -1,28 +1,14 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
     git unzip libzip-dev \
     && docker-php-ext-install pdo pdo_mysql
 
-# 🔥 RESET COMPLET DES MPM
-RUN a2dismod mpm_event || true
-RUN a2dismod mpm_worker || true
-RUN a2dismod mpm_prefork || true
+WORKDIR /app
+COPY . .
 
-# 🔥 ACTIVE UN SEUL MPM
-RUN a2enmod mpm_prefork
+ENV APP_ENV=prod
 
-# Active rewrite
-RUN a2enmod rewrite
+EXPOSE 8080
 
-# Change document root vers /public
-ENV APACHE_DOCUMENT_ROOT /var/www/html/public
-
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
-
-COPY . /var/www/html
-
-WORKDIR /var/www/html
-
-EXPOSE 80
+CMD php -S 0.0.0.0:8080 -t public
