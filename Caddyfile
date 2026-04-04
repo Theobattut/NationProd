@@ -1,7 +1,8 @@
 :{$PORT}
+
 root * /app/public
 encode gzip
 
-php_fastcgi unix//var/run/php/
-php-fpm.sock
+php_server
+
 file_server
