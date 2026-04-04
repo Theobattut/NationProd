@@ -4,7 +4,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.2",
+        "php": "^8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "barbieswimcrew/zip-code-validator": "^3.1",
@@ -68,6 +68,9 @@
             "symfony/flex": true,
             "symfony/runtime": true
         },
+        "platform": {
+      "php": "8.4.0"
+    },
         "bump-after-update": true,
         "sort-packages": true
     },
