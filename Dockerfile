@@ -4,8 +4,13 @@ RUN apt-get update && apt-get install -y \
     git unzip libzip-dev \
     && docker-php-ext-install pdo pdo_mysql
 
-# 🔥 FIX MPM (IMPORTANT)
-RUN a2dismod mpm_event && a2enmod mpm_prefork
+# 🔥 RESET COMPLET DES MPM
+RUN a2dismod mpm_event || true
+RUN a2dismod mpm_worker || true
+RUN a2dismod mpm_prefork || true
+
+# 🔥 ACTIVE UN SEUL MPM
+RUN a2enmod mpm_prefork
 
 # Active rewrite
 RUN a2enmod rewrite
