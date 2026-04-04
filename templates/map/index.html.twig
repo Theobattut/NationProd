@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carte intéractive
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4 text-center">
+		<h1 class="pb-3">Repérez-vous facilement !</h1>
+
+		<div class="map-container">
+			<iframe src="https://www.google.com/maps/d/embed?mid=1z0aPxGJomYNwmBBq_5ji2WK5rPe5sJs&ehbc=2E312F&noprof=1" class="rounded shadow" allowfullscreen=""></iframe>
+		</div>
+	</div>
+
+{% endblock %}

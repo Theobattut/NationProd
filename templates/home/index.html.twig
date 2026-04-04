@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nation Sound Festival
+{% endblock %}
+
+{% block body %}
+	{% include "partials/_message.html.twig" %}
+	<div class="container pt-5">
+		<h1 class="text-center pb-4">Nation Sound Festival</h1>
+		<h2 class="text-center pb-3">Les prochains concerts<h2>
+				<div class="d-flex flex-row">
+					{% for artist in artists %}
+						<div class="c4mnd7m atm_9s_11p5wf0 atm_dz_1osqo2v me-2">
+							<div class="c1l1h97y">
+								<a href="{{ path('app_program_show', {'slug': artist.slug}) }}">
+									<div class="cy5jw6o">
+										<div class="lxq01kf">
+											<div class="m1v28t5c">
+												<div class="c14dgvke">
+													<div class="c1e9noat atm_9s_11p5wf0 atm_dx_1orwtfw">
+														<div class="s1yvqyx7">
+															<div class="d1l1iq8f">
+																{% if not artist.imageName is empty %}
+																	<img src="{{ vich_uploader_asset(artist) }}" alt="{{ artist.name }}" class="idpfg47">
+																{% else %}
+																	<img src="{{ asset('build/img/default-img.jpg') }}" class="idpfg47" alt="Default Image">
+																{% endif %}
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="df3734e">
+											<span class="t6mzqp7">
+												{% if artist.name is defined and artist.name != null %}
+													{{ artist.name|upper }}
+												{% else %}
+													...
+												{% endif %}
+											</span>
+											<span class="r87loi5">
+												{{ artist.programDateAt|format_datetime('short', 'none', locale: 'fr') }}
+											</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<!-- Bouton vers billeterie -->
+				<div class="d-flex justify-content-center p-4">
+					<a href="{{ path('app_ticket') }}" class="btn btn-lg btn-dark text-white" style="width: 300px; font-size: 1.5rem; border: 3px solid black;">
+						Billetterie
+					</a>
+				</div>
+				<!-- Carte intéractive -->
+				<div class="container mt-4 text-center">
+					<h1 class="pb-3">Repérez-vous facilement !</h1>
+
+					<div class="map-container">
+						<iframe src="https://www.google.com/maps/d/embed?mid=1z0aPxGJomYNwmBBq_5ji2WK5rPe5sJs&ehbc=2E312F&noprof=1" class="rounded shadow" allowfullscreen=""></iframe>
+					</div>
+				</div>
+			</div>
+		{% endblock %}

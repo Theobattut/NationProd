@@ -1,0 +1,20 @@
+<div class="card b92606">
+	<div class="card-header p-0 card-img-top e695de">
+		<img src="{{ vich_uploader_asset(pass, 'imageFile') }}" alt="{{ pass.name }}" class="img-fluid qc7n4 ">
+	</div>
+	<div class="text-center cd7a33 mt-3">
+	<div class="card-body position-relative pt-5">
+		<h5 class="card-title">
+			{{ pass.price | amount }}
+		</h5>
+		<span class="badge bg-info">{{ pass.category.name }}</span>
+		<div class="m1drx3">
+			<p class="card-text">
+				{{ pass.content | raw }}
+			</p>
+		</div>
+		<a href="{{ path('app_ticket_detail', {'id': pass.id}) }}" class="btn btn-primary btn-sm me-3">Détails</a>
+		<a href="{{ path('app_cart', {'id': pass.id}) }}" class="btn btn-success btn-sm">Ajouter</a>
+		</div>
+	</div>
+</div>

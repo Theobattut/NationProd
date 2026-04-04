@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Billet
+	{{ ticket.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="custom-container-main">
+		<main id="site-content">
+			<div class="f12t1m0s">
+				<div class="container pt-5">
+					<div>
+						<a href="{{ path('app_ticket') }}" class="pcb3o4">Retour à la liste des billets</a>
+					</div>
+					<div class="pp5axk">
+						<div class="a7re76">
+							<div class="d1l1iq8f">
+								{% if not ticket.imageName is empty %}
+									<img src="{{ vich_uploader_asset(ticket) }}" alt="{{ ticket.name }}" class="idpfg47 jzoutu">
+								{% else %}
+									<img src="{{ asset('build/img/default-img.jpg') }}" class="idpfg47 jzoutu" alt="Default Image">
+								{% endif %}
+							</div>
+						</div>
+						<div class="sibihh">
+							<div class="erqbbn">
+								<h3 class="sex59f">{{ ticket.name|upper }}</h3>
+								<div class="fn4g7z">
+									<div class="hj6w7z">
+										{{ ticket.content|raw|nl2br|striptags }}
+									</div>
+									<div class="ag7k35">
+										<p>Date de début:
+											{{ ticket.startDateAt|format_datetime('short', 'short', locale: 'fr') }}</p>
+									</div>
+									<div class="ag7k35">
+										<p>Date de fin:
+											{{ ticket.endDateAt|format_datetime('short', 'short', locale: 'fr') }}</p>
+									</div>
+									<div class="ag7k35">
+										{{ ticket.price|amount|upper}}
+									</div>
+									<div class="pt-5">
+									<a href="{{ path('app_cart', {'id': ticket.id}) }}" class="btn btn-success btn-sm">Ajouter au panier</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+	{% endblock %}

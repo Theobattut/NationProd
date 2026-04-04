@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/">Nationsound</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarColor03">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item">
+					<a href="{{ path('app_program') }}" class="nav-link">
+						 Programmation
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{ path('app_ticket') }}" class="nav-link">
+						 Billeterie
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{ path('app_faq') }}" class="nav-link">
+						 FAQ
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{ path('app_map') }}" class="nav-link">
+					Carte interactive
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{ path('app_partner') }}" class="nav-link">
+						 Partenaires
+					</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
+				{% if app.user %}
+					{% if is_granted('ROLE_ADMIN') %}
+						<li class="nav-item">
+							<a href="{{ path('admin') }}" class="nav-link">Administration</a>
+						</li>
+					{% endif %}
+					<li class="nav-item">
+					<a href="{{ path('app_purchase_list') }}" class="nav-link">Mes commandes</a>
+					</li>
+					<div class="btn-group">
+						<button class="dropdown-toggle btn-dropdown-user" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+							<div class="sc-gravatar">
+								Paramètres
+							</div>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-lg-end py-0">
+							<li class="py-2 px-2">
+								<a class="dropdown-item dropdown-user" href="{{path('app_profile')}}">Profil</a>
+							</li>
+							<div class="space-between"></div>
+							<li class="py-2 px-2">
+								<a class="dropdown-item dropdown-user color-btn-logout" href="{{ path('app_logout') }}">Se déconnecter</a>
+							</li>
+						</ul>
+					</div>
+				{% else %}
+					<li class="nav-item">
+						<a href="{{ path('app_login') }}" class="btn btn-primary btn-connect">Se connecter</a>
+					</li>
+				{% endif %}
+				<li class="nav-item">
+					<a href="{{ path('app_cart_show') }}" class="nav-link">
+					{% if cartService.total > 0 %}					
+						<i class="fas fa-shopping-cart"></i>
+						Panier ({{ cartService.total | amount }})
+					{% endif %}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
