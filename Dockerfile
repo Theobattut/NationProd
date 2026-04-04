@@ -1,12 +1,21 @@
-FROM dunglas/frankenphp:php8.4
+FROM php:8.2-apache
 
-RUN install-php-extensions pdo_mysql
+RUN apt-get update && apt-get install -y \
+    git unzip libzip-dev \
+    && docker-php-ext-install pdo pdo_mysql
 
-WORKDIR /app
-COPY . .
+# Active Apache rewrite
+RUN a2enmod rewrite
 
-ENV APP_ENV=prod
+# Change document root to /public
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
-EXPOSE 8080
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
-CMD ["frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
+# Copier projet
+COPY . /var/www/html
+
+WORKDIR /var/www/html
+
+EXPOSE 80
