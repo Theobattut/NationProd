@@ -12,7 +12,7 @@ WORKDIR /app
 COPY . .
 
 # 🔥 INSTALLER LES DEPENDANCES
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 ENV APP_ENV=prod
 
