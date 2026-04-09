@@ -13,7 +13,7 @@ COPY . .
 
 # 🔥 INSTALLER LES DEPENDANCES
 RUN composer install --no-dev --optimize-autoloader --no-scripts
-
+RUN php bin/console importmap:install
 ENV APP_ENV=prod
 
 EXPOSE 8080
