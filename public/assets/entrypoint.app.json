@@ -1,0 +1,19 @@
+[
+    "\/assets\/bootstrap.js",
+    "@hotwired\/stimulus",
+    "\/assets\/js\/modules\/Filter.js",
+    "\/assets\/styles\/app.css",
+    "bootstrap\/dist\/css\/bootstrap.min.css",
+    "@fortawesome\/fontawesome-free\/css\/all.css",
+    "bootstrap",
+    "@symfony\/stimulus-bundle",
+    "flip-toolkit",
+    "@popperjs\/core",
+    "\/assets\/@symfony\/stimulus-bundle\/controllers.js",
+    "rematrix",
+    "\/assets\/@symfony\/ux-toggle-password\/controller.js",
+    "\/assets\/@symfony\/ux-toggle-password\/style.min.css",
+    "\/assets\/@symfony\/ux-turbo\/turbo_controller.js",
+    "\/assets\/controllers\/hello_controller.js",
+    "@hotwired\/turbo"
+]

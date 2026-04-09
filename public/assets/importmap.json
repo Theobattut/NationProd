@@ -1,0 +1,94 @@
+{
+    "app": {
+        "path": "\/assets\/app-BpNht3T.js",
+        "type": "js"
+    },
+    "\/assets\/bootstrap.js": {
+        "path": "\/assets\/bootstrap-fWNU0-I.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/stimulus-bundle\/controllers.js": {
+        "path": "\/assets\/@symfony\/stimulus-bundle\/controllers-5rS88pk.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/ux-toggle-password\/controller.js": {
+        "path": "\/assets\/@symfony\/ux-toggle-password\/controller-DnfXSid.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/ux-toggle-password\/style.min.css": {
+        "path": "\/assets\/@symfony\/ux-toggle-password\/style.min-XmGIIO3.css",
+        "type": "css"
+    },
+    "\/assets\/@symfony\/ux-turbo\/turbo_controller.js": {
+        "path": "\/assets\/@symfony\/ux-turbo\/turbo_controller-zl4y2v3.js",
+        "type": "js"
+    },
+    "\/assets\/controllers\/hello_controller.js": {
+        "path": "\/assets\/controllers\/hello_controller-h7Y4WCm.js",
+        "type": "js"
+    },
+    "\/assets\/controllers\/csrf_protection_controller.js": {
+        "path": "\/assets\/controllers\/csrf_protection_controller-ieY7NiN.js",
+        "type": "js"
+    },
+    "\/assets\/js\/modules\/Filter.js": {
+        "path": "\/assets\/js\/modules\/Filter-30E4K0C.js",
+        "type": "js"
+    },
+    "\/assets\/styles\/app.css": {
+        "path": "\/assets\/styles\/app-0Vw009s.css",
+        "type": "css"
+    },
+    "register": {
+        "path": "\/assets\/js\/register-giEFUrv.js",
+        "type": "js"
+    },
+    "resetpw": {
+        "path": "\/assets\/js\/resetpw-ZQSxoAi.js",
+        "type": "js"
+    },
+    "updatepw": {
+        "path": "\/assets\/js\/updatepw-lCSxAvq.js",
+        "type": "js"
+    },
+    "deleteAccount": {
+        "path": "\/assets\/js\/deleteAccount-BTjao_K.js",
+        "type": "js"
+    },
+    "@hotwired\/stimulus": {
+        "path": "\/assets\/vendor\/@hotwired\/stimulus\/stimulus.index-S4zNcea.js",
+        "type": "js"
+    },
+    "@symfony\/stimulus-bundle": {
+        "path": "\/assets\/@symfony\/stimulus-bundle\/loader-hwmZoC6.js",
+        "type": "js"
+    },
+    "@hotwired\/turbo": {
+        "path": "\/assets\/vendor\/@hotwired\/turbo\/turbo.index-pT15T6h.js",
+        "type": "js"
+    },
+    "bootstrap": {
+        "path": "\/assets\/vendor\/bootstrap\/bootstrap.index-wScCW9Z.js",
+        "type": "js"
+    },
+    "@popperjs\/core": {
+        "path": "\/assets\/vendor\/@popperjs\/core\/core.index-QBO6pjP.js",
+        "type": "js"
+    },
+    "bootstrap\/dist\/css\/bootstrap.min.css": {
+        "path": "\/assets\/vendor\/bootstrap\/dist\/css\/bootstrap.min-FxLwN4-.css",
+        "type": "css"
+    },
+    "@fortawesome\/fontawesome-free\/css\/all.css": {
+        "path": "\/assets\/vendor\/@fortawesome\/fontawesome-free\/css\/all-bJZK-u0.css",
+        "type": "css"
+    },
+    "flip-toolkit": {
+        "path": "\/assets\/vendor\/flip-toolkit\/flip-toolkit.index-PeQNNR3.js",
+        "type": "js"
+    },
+    "rematrix": {
+        "path": "\/assets\/vendor\/rematrix\/rematrix.index-b7NpLn2.js",
+        "type": "js"
+    }
+}
