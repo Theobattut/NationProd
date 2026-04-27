@@ -1,4 +1,6 @@
 # NationProd 🚀
+## 🧾 Description
+Application web de gestion de festival permettant la gestion des utilisateurs, événements et billetterie.
 
 ## 📸 Aperçu de l'application
 
@@ -13,3 +15,9 @@
 
 ### 🛒 Panier
 ![Panier](https://raw.githubusercontent.com/Theobattut/NationProd/main/panier.png)
+
+## 🛠️ Technologies
+- PHP
+- MySQL
+- HTML / CSS
+- JavaScript
