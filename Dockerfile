@@ -23,7 +23,7 @@ WORKDIR /app
 COPY . .
 
 # Installer les dépendances PHP
-RUN composer install --no-dev --optimize-autoloader --no-scripts
+RUN composer install --no-dev --optimize-autoloader 
 
 # Définir l'environnement
 ENV APP_ENV=prod
