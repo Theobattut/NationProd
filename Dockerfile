@@ -21,16 +21,16 @@ WORKDIR /app
 
 # Copier le projet
 COPY . .
-ENV COMPOSER_ALLOW_SUPERUSER=1
-# Installer les dépendances PHP
-RUN composer install --no-dev --optimize-autoloader 
+# 🔥 IMPORTANT : pas de scripts ici
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# Définir l'environnement
 ENV APP_ENV=prod
 ENV APP_DEBUG=0
 
-# Exposer le port utilisé par Railway
 EXPOSE 8080
+
+# 🔥 scripts exécutés au runtime (avec variables dispo)
+CMD php bin/console cache:clear --env=prod && php -S 0.0.0.0:8080 -t public
 
 # Lancer le serveur PHP
 CMD ["php", "-S", "0.0.0.0:8080", "-t", "public"]
