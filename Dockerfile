@@ -21,7 +21,7 @@ WORKDIR /app
 
 # Copier le projet
 COPY . .
-
+ENV COMPOSER_ALLOW_SUPERUSER=1
 # Installer les dépendances PHP
 RUN composer install --no-dev --optimize-autoloader 
 
