@@ -30,7 +30,7 @@ ENV APP_DEBUG=0
 EXPOSE 8080
 
 # 🔥 scripts exécutés au runtime (avec variables dispo)
-CMD php bin/console cache:clear --env=prod && php -S 0.0.0.0:8080 -t public
+CMD composer install --no-dev --optimize-autoloader && php bin/console cache:clear --env=prod && php -S 0.0.0.0:8080 -t public
 
 # Lancer le serveur PHP
 CMD ["php", "-S", "0.0.0.0:8080", "-t", "public"]
